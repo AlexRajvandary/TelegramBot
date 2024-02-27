@@ -1,10 +1,10 @@
 ﻿using Telegram.Bot;
 
-namespace TelegramBot.Commands.Users
+namespace TelegramBot.Commands.Admins
 {
-    public class CurrentSubscriptions : ICommand
+    public class StartCommand : ICommand
     {
-        public string Name => "/currentSubscriptions";
+        public string Name => "/start";
 
         public Task Execute(long chatId, ITelegramBotClient botClient)
         {

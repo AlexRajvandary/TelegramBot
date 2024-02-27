@@ -4,7 +4,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 
 namespace TelegramBot.Commands.Users
 {
-    public class UserStartCommand : ICommand
+    public class StartCommand : ICommand
     {
         public string Name => "/start";
 
@@ -16,6 +16,22 @@ namespace TelegramBot.Commands.Users
                     new []
                     {
                         InlineKeyboardButton.WithWebApp("Перейти в каталог", new WebAppInfo(){Url = "https://master--bespoke-rugelach-7b0f4e.netlify.app/"})
+                    },
+                     new []
+                    {
+                        InlineKeyboardButton.WithCallbackData("Меню", "/menu")
+                    },
+                      new []
+                    {
+                        InlineKeyboardButton.WithCallbackData("Действующие подписки", "/currentSubscriptions")
+                    },
+                       new []
+                    {
+                        InlineKeyboardButton.WithCallbackData("История", "/history")
+                    },
+                        new []
+                    {
+                        InlineKeyboardButton.WithCallbackData("В ожидании", "/orders")
                     }
             });
 

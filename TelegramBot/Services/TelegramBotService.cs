@@ -2,6 +2,7 @@
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using TelegramBot.Commands;
+using TelegramBot.Commands.Admins;
 using TelegramBot.Domain;
 
 namespace TelegramBot.Services
@@ -12,7 +13,7 @@ namespace TelegramBot.Services
         private readonly UserService _userService;
 
         private Dictionary<long, CommandsExecutor> chats = [];
-        private List<ICommand> adminCommands = new List<ICommand>();
+        private List<ICommand> adminCommands = new List<ICommand>() { new StartCommand(), };
         private List<ICommand> userCommands = new List<ICommand>();
 
         public TelegramBotService(ITelegramBotClient botClient, UserService userService)
